@@ -148,9 +148,9 @@ O `DiagnosticInference` analisa os resultados e gera conclusões estruturadas:
 
 | Cenário Detectado | Conclusão | Confiança |
 |---|---|---|
-| DNS NXDOMAIN | Bloqueio no resolver | Alta |
-| DNS timeout | Resolver lento/inacessível | Média |
-| DNS ISP > 200ms, Google < 50ms | Resolver ISP sobrecarregado | Média |
+| DNS NXDOMAIN | Bloqueio na resolução | Alta |
+| DNS timeout | Resolução lento/inacessível | Média |
+| DNS ISP > 200ms, Google < 50ms | Resolução ISP sobrecarregado | Média |
 | DNS sistema falha + Google resolve | Bloqueio no ISP | Alta |
 | TCP:443 RST/refused | Firewall ou serviço indisponível | Alta |
 | TCP:443 timeout | Porta filtrada ou host down | Média |
