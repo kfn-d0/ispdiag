@@ -1,6 +1,6 @@
 # ISP Diagnostic
 
-AplicativO para diagnóstico de conectividade, projetado para cenários onde um cliente de provedor de internet relata não conseguir acessar determinados serviços. Executa testes camada por camada (DNS → TCP → TLS → HTTP), coleta informações do ambiente de rede e gera relatórios técnicos exportáveis.
+Aplicativo para diagnóstico de conectividade, projetado para cenários onde um cliente de provedor de internet relata não conseguir acessar determinados serviços. Executa testes camada por camada (DNS → TCP → TLS → HTTP), coleta informações do ambiente de rede e gera relatórios técnicos exportáveis.
 
 ![Screenshot_2026-03-03-12-00-20-009_com ispdiag](https://github.com/user-attachments/assets/694e14e2-091b-4bee-a5fa-f11fffc1ce87)
 
