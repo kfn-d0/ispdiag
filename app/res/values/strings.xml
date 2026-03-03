@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ISP Diagnostic</string>
+    <string name="title_results">Resultados</string>
+    <string name="title_details">Detalhes Técnicos</string>
+    <string name="title_report">Relatório</string>
+    <string name="btn_run">Executar Diagnóstico</string>
+    <string name="btn_details">Ver detalhes técnicos</string>
+    <string name="btn_report">Gerar Relatório</string>
+    <string name="btn_export_json">Exportar JSON</string>
+    <string name="btn_copy">Copiar</string>
+    <string name="btn_share">Compartilhar</string>
+    <string name="hint_custom_domain">Domínio customizado (ex: example.com)</string>
+    <string name="label_add">Adicionar</string>
+    <string name="label_select_all">Selecionar Todos</string>
+    <string name="label_running">Executando diagnóstico…</string>
+    <string name="label_dns">DNS</string>
+    <string name="label_tcp">TCP</string>
+    <string name="label_tls">TLS</string>
+    <string name="label_http">HTTP</string>
+    <string name="label_traceroute">Traceroute</string>
+    <string name="label_environment">Ambiente</string>
+    <string name="status_ok">OK</string>
+    <string name="status_partial">Parcial</string>
+    <string name="status_fail">Falha</string>
+    <string name="label_connection_type">Tipo de Conexão</string>
+    <string name="label_public_ip">IP Público</string>
+    <string name="label_cgnat">CGNAT</string>
+    <string name="label_ipv6">IPv6</string>
+    <string name="error_no_selection">Selecione ao menos um serviço</string>
+    <string name="report_copied">Relatório copiado!</string>
+    <string name="json_saved">JSON salvo em: %s</string>
+</resources>
