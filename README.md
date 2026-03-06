@@ -272,39 +272,41 @@ MainActivity (seleção)
 
 ## Build (Manual sem Gradle)
 
-Este projeto **não usa Gradle**. A compilação é feita via script PowerShell que chama diretamente as ferramentas do Android SDK.
+Este projeto **não usa Gradle**. A compilação é feita via script PowerShell que chama diretamente as ferramentas do Android SDK, garantindo um processo leve e transparente.
 
 ### Pré-requisitos
 
-| Requisito | Versão |
-|-----------|--------|
-| Android SDK | Build-tools 36.x, Platform android-36 |
-| JDK | 11+ (Eclipse Adoptium recomendado) |
-| PowerShell | 5.1+ (Windows) |
+| Requisito | Versão / Caminho |
+|-----------|------------------|
+| **Android SDK** | `build-tools 35.0.0`, `platforms/android-34` |
+| **Local do SDK**| `C:\Users\user\AppData\Local\Android\Sdk` |
+| **JDK** | 11+ (`javac` e `keytool` no PATH) |
+| **PowerShell** | 5.1+ (Windows) |
 
-### Compilar
+### Como Compilar
 
-```powershell
-.\scripts\build.ps1 -Clean
-```
+O script de build automatiza todo o pipeline (AAPT2, Javac, D8, ZipAlign e ApkSigner). 
 
-### Compilar e instalar
+1. Abra o PowerShell na raiz do projeto.
+2. Execute o comando:
+   ```powershell
+   .\scripts\build_android.ps1
+   ```
 
-```powershell
-.\scripts\build.ps1 -Clean -Install
-```
+### Saída do Build
 
-O APK é gerado em `ISPDiagnostic.apk` na raiz do projeto.
+O APK final assinado e pronto para instalação será gerado em:
+`build/app-release.apk`
 
-### Pipeline de Build
+### Pipeline de Build (Interno)
 
-1. **AAPT2 compile** — Compila recursos XML
-2. **AAPT2 link** — Gera `R.java` e vincula recursos
-3. **javac** — Compila fontes Java (source 8)
-4. **d8** — Converte bytecode para DEX
-5. **AAPT2 package** — Empacota APK
-6. **zipalign** — Alinha ZIP para otimização
-7. **apksigner** — Assina APK com keystore de debug
+1. **AAPT2 compile** — Compila recursos XML e imagens da pasta `res/`.
+2. **AAPT2 link** — Gera a classe `R.java`, vincula recursos e cria o APK não alinhado.
+3. **javac** — Compila os fontes Java e a classe `R.java` gerada.
+4. **d8** — Converte o bytecode `.class` para o formato Dalvik `.dex`.
+5. **AAPT add** — Adiciona o arquivo `classes.dex` ao pacote bruto.
+6. **zipalign** — Otimiza o alinhamento de 4 bytes para performance em runtime.
+7. **apksigner** — Assina o APK com uma chave de debug (gera uma nova keystore se necessário).
 
 ---
 
@@ -476,3 +478,4 @@ Analise:
 ```
 
 ---
+
